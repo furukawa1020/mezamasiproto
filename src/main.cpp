@@ -11,6 +11,13 @@ void setup() {
   // シリアル通信を開始
   Serial.begin(115200);
   
+  // USB CDC接続を待つ（最大3秒）
+  unsigned long startTime = millis();
+  while (!Serial && (millis() - startTime < 3000)) {
+    delay(10);
+  }
+  delay(500);
+  
   // アナログピンの設定
   pinMode(SHARP_PIN, INPUT);
   
