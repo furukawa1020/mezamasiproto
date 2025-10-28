@@ -4,6 +4,9 @@
 const int SHARP_PIN = 1;  // GPIO1にセンサーを接続
 const int LED_PIN = 8;    // ESP32-C3 SuperMiniの内蔵LED（GPIO8）
 
+// 関数の前方宣言
+void controlLEDByDistance(float distance);
+
 void setup() {
   // シリアル通信を開始
   Serial.begin(115200);
